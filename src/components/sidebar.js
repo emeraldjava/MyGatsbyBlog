@@ -2,6 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faTwitter,
+  faGithub,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { ShareTwitter } from './share';
 
 const StyledSidebar = styled.div`
   width: 300px;
@@ -15,8 +23,27 @@ const StyledSidebar = styled.div`
 
 const SidebarBlock = styled.div`
   padding: 5px;
-  font-size: .9rem;
+  font-size: 0.9rem;
 `
+
+export const SocialFollowDiv = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`
+
+export const ShareGitHub = styled.a`
+  color: #23292d;
+  &:visited {
+    color: #23292d;
+  }
+`
+export const ShareLinkedIn = styled.a`
+  color: #0178B5;
+  &:visited {
+    color: #0178B5;
+  }
+`
+
 
 export default function Sidebar(props) {
   return (
@@ -42,13 +69,22 @@ export default function Sidebar(props) {
               />
             </SidebarBlock>
 
-            {/* <SidebarBlock>
-              <p>
-                I'm a web developer, machinist, and sometimes mechanic (when the
-                truck breaks down). I guess you could say that I enjoy solving
-                problems and building things.
-              </p>
-            </SidebarBlock> */}
+            <SidebarBlock>
+              <SocialFollowDiv>
+                <ShareTwitter href="https://twitter.com/brandonlehr" style={{ marginRight: '5px' }}>
+                  <FontAwesomeIcon icon={faTwitter} size="2x" />
+                </ShareTwitter>
+                <ShareGitHub href="https://github.com/blehr" style={{ marginRight: '8px' }}>
+                  <FontAwesomeIcon icon={faGithub} size="2x" />
+                </ShareGitHub>
+                <ShareLinkedIn href="/https://www.linkedin.com/in/brandonlehr/" style={{ marginRight: '8px' }}>
+                  <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
+                </ShareLinkedIn>
+                <a href="mailto:blehr.mail@gmail.com">
+                  <FontAwesomeIcon icon={faEnvelope} size="2x" />
+                </a>
+              </SocialFollowDiv>
+            </SidebarBlock>
             <SidebarBlock>
               <p>
                 When I was young, I would tear apart my toys to see how they
@@ -114,18 +150,6 @@ export default function Sidebar(props) {
                   and Law.
                 </li>
               </ul>
-
-              <p>
-                If you have found any of this intriguing, or appalling, feel
-                free to reach out to me on{' '}
-                <a href="https://twitter.com/brandonlehr">
-                  <i className="fab fa-twitter-square" aria-hidden="true" /> twitter
-                </a>{' '}
-                or by{' '}
-                <a href="mailto:blehr.mail@gmail.com">
-                  <i className="fas fa-envelope-square" aria-hidden="true" /> email
-                </a>
-              </p>
             </SidebarBlock>
           </StyledSidebar>
         )

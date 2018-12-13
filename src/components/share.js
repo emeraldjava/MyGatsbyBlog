@@ -20,7 +20,7 @@ const ShareFacebook = styled.a`
     color: #4267b2;
   }
 `
-const ShareTwitter = styled.a`
+export const ShareTwitter = styled.a`
   color: #1ea0f1;
   &:visited {
     color: #1ea0f1;

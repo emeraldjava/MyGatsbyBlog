@@ -11,6 +11,7 @@ import Header from './header'
 import './layout.css'
 import Navigation from './navigation'
 import Sidebar from './sidebar'
+import Footer from './footer';
 
 library.add(faFolderOpen)
 
@@ -22,7 +23,6 @@ const LayoutDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* flex-wrap: wrap; */
 
   @media (max-width: 976px) {
     flex-direction: column-reverse;
@@ -34,6 +34,7 @@ const LayoutDiv = styled.div`
 const ContentDiv = styled.div`
   padding-left: 25px;
   padding-right: 15px;
+  max-width: 650px;
 `
 
 const Layout = ({ children }) => (
@@ -64,6 +65,7 @@ const Layout = ({ children }) => (
           <Sidebar />
           <ContentDiv>{children}</ContentDiv>
         </LayoutDiv>
+        <Footer />
       </>
     )}
   />

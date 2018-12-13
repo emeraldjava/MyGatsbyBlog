@@ -29,7 +29,7 @@ function BlogPost(props) {
       ? post.frontmatter.featured_image.publicURL
       : ''
   const { title, date, categories, description } = post.frontmatter
-  const { prev, next } = props.pageContext;
+  const { prev, next } = props.pageContext
 
   return (
     <Layout>
@@ -40,16 +40,17 @@ function BlogPost(props) {
         url={url}
         pathname={props.location.pathname}
       />
+      <div>
+        <PostDate>{date}</PostDate>
+        <PostCategories categories={categories} />
 
-      <PostDate>{date}</PostDate>
-      <PostCategories categories={categories} />
-
-      <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      <Spacer />
-      <hr />
-      <Share title={title} url={url} pathname={props.location.pathname} />
-      <PrevNext prev={prev && prev.node} next={next && next.node} />
+        <h1>{title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Spacer />
+        <hr />
+        <Share title={title} url={url} pathname={props.location.pathname} />
+        <PrevNext prev={prev && prev.node} next={next && next.node} />
+      </div>
     </Layout>
   )
 }
