@@ -11,11 +11,11 @@ import Header from './header'
 import './layout.css'
 import Navigation from './navigation'
 import Sidebar from './sidebar'
-import Footer from './footer';
+import Footer from './footer'
 
 library.add(faFolderOpen)
 
-const LayoutDiv = styled.div`
+const TwoColumnLayoutDiv = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0px 1.0875rem 1.45rem;
@@ -37,7 +37,14 @@ const ContentDiv = styled.div`
   max-width: 650px;
 `
 
-const Layout = ({ children }) => (
+const OneColumnLayoutDiv = styled.div`
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
+`
+
+const Layout = ({ children, pageType }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -61,10 +68,15 @@ const Layout = ({ children }) => (
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Navigation />
-        <LayoutDiv>
-          <Sidebar />
-          <ContentDiv>{children}</ContentDiv>
-        </LayoutDiv>
+        {pageType === 'postList' && (
+          <TwoColumnLayoutDiv>
+            <Sidebar />
+            <ContentDiv>{children}</ContentDiv>
+          </TwoColumnLayoutDiv>
+        )}
+        {pageType === 'blogPost' && (
+          <OneColumnLayoutDiv>{children}</OneColumnLayoutDiv>
+        )}
         <Footer />
       </>
     )}

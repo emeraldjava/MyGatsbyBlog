@@ -45,7 +45,7 @@ const DateSpan = styled.span`
 const IndexPage = props => {
   const postList = props.data.allMarkdownRemark
   return (
-    <Layout>
+    <Layout pageType="postList" >
       {postList.edges.map(({ node }, i) => (
         <PostList key={i}>
           <DateSpan>{node.frontmatter.date}</DateSpan>

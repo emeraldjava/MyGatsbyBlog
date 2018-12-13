@@ -32,7 +32,7 @@ function BlogPost(props) {
   const { prev, next } = props.pageContext
 
   return (
-    <Layout>
+    <Layout pageType="blogPost" >
       <Metatags
         title={title}
         description={description}
