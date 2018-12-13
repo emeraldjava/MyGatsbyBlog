@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitterSquare, faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faShareAlt } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 
 // const ShareH3 = styled.h3`
@@ -37,6 +38,7 @@ const Share = props => {
   return (
     <ShareDiv>
       {/* <ShareH3>Share?</ShareH3> */}
+      <FontAwesomeIcon icon={faShareAlt} size="2x" style={{ opacity: '.9' }}/>
       <ShareFacebook href={fb} target="blank">
         <FontAwesomeIcon icon={faFacebook} size="3x" />
       </ShareFacebook>

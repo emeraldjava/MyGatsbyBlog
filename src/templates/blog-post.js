@@ -6,6 +6,7 @@ import PostCategories from '../components/post-categories'
 import Metatags from '../components/Metatags'
 import PrevNext from '../components/prevnext'
 import Share from '../components/share'
+import AuthorBio from '../components/author-bio';
 
 const PostDate = styled.p`
   margin: 0;
@@ -47,6 +48,9 @@ function BlogPost(props) {
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <Spacer />
+        <hr />
+        {/* Author Bio */}
+        <AuthorBio />
         <hr />
         <Share title={title} url={url} pathname={props.location.pathname} />
         <PrevNext prev={prev && prev.node} next={next && next.node} />

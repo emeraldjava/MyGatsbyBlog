@@ -2,14 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faTwitter,
-  faGithub,
-  faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { ShareTwitter } from './share';
+
+import FollowMe from './follow-me';
 
 const StyledSidebar = styled.div`
   width: 300px;
@@ -25,25 +19,6 @@ const SidebarBlock = styled.div`
   padding: 5px;
   font-size: 0.9rem;
 `
-
-export const SocialFollowDiv = styled.div`
-  display: flex;
-  justify-content: flex-start;
-`
-
-export const ShareGitHub = styled.a`
-  color: #23292d;
-  &:visited {
-    color: #23292d;
-  }
-`
-export const ShareLinkedIn = styled.a`
-  color: #0178B5;
-  &:visited {
-    color: #0178B5;
-  }
-`
-
 
 export default function Sidebar(props) {
   return (
@@ -70,20 +45,7 @@ export default function Sidebar(props) {
             </SidebarBlock>
 
             <SidebarBlock>
-              <SocialFollowDiv>
-                <ShareTwitter href="https://twitter.com/brandonlehr" style={{ marginRight: '5px' }}>
-                  <FontAwesomeIcon icon={faTwitter} size="2x" />
-                </ShareTwitter>
-                <ShareGitHub href="https://github.com/blehr" style={{ marginRight: '8px' }}>
-                  <FontAwesomeIcon icon={faGithub} size="2x" />
-                </ShareGitHub>
-                <ShareLinkedIn href="/https://www.linkedin.com/in/brandonlehr/" style={{ marginRight: '8px' }}>
-                  <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
-                </ShareLinkedIn>
-                <a href="mailto:blehr.mail@gmail.com">
-                  <FontAwesomeIcon icon={faEnvelope} size="2x" />
-                </a>
-              </SocialFollowDiv>
+              <FollowMe />
             </SidebarBlock>
             <SidebarBlock>
               <p>
