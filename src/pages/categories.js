@@ -1,37 +1,47 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Utilities
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 
 // Components
-import Helmet from "react-helmet"
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/layout'
+import Metatags from '../components/Metatags'
 
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
-      siteMetadata: { title },
+      siteMetadata: { title, description, siteUrl },
     },
   },
-}) => (
-  <div>
-    <Helmet title={title} />
+}) => {
+  return (
     <div>
-      <h1>Categories</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/categories/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue.toUpperCase().replace(/-/g, ' ')} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Metatags
+        title={title}
+        description={description}
+        // thumbnail={url + thumbnail}
+        url={siteUrl}
+        pathname={'/categories'}
+      />
+      <Layout pageType="postList" title="Categories" showNav>
+        <h2>Categories</h2>
+        <ul>
+          {group.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/categories/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue.toUpperCase().replace(/-/g, ' ')} (
+                {tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Layout>
     </div>
-  </div>
-)
+  )
+}
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
@@ -58,12 +68,11 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
+        siteUrl
       }
     }
-    allMarkdownRemark(
-      limit: 2000
-      # filter: { frontmatter: { published: { ne: false } } }
-    ) {
+    allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___categories) {
         fieldValue
         totalCount

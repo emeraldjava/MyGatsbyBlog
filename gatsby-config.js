@@ -13,6 +13,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Lato']
+        }
+      }
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -31,6 +39,7 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: `/src/utils/typography`,
+        omitGoogleFont: true,
       },
     },
 
@@ -52,7 +61,7 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 590,
+              maxWidth: 500,
               withWebp: true,
             },
           },
@@ -81,6 +90,19 @@ module.exports = {
           },
           `gatsby-remark-smartypants`,
           'gatsby-remark-static-images',
+          {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+              trackingId: "UA-62760710-1",
+            },
+          },
+          {
+            resolve: `gatsby-plugin-google-adsense`,
+            options: {
+              publisherId: `ca-pub-9453781066915703`,
+              exclude: []
+            },
+          },
         ],
       },
     },

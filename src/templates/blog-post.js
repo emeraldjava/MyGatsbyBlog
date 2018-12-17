@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
+import { DiscussionEmbed } from "disqus-react";
 import PostCategories from '../components/post-categories'
 import Metatags from '../components/Metatags'
 import PrevNext from '../components/prevnext'
@@ -31,9 +32,15 @@ function BlogPost(props) {
       : ''
   const { title, date, categories, description } = post.frontmatter
   const { prev, next } = props.pageContext
+  const disqusShortname = "brandonlehr";
+    const disqusConfig = {
+      identifier: post.id,
+      title: post.frontmatter.title,
+      url: props.location.href
+    };
 
   return (
-    <Layout pageType="blogPost" >
+    <Layout pageType="blogPost" title={title} showNav >
       <Metatags
         title={title}
         description={description}
@@ -54,6 +61,7 @@ function BlogPost(props) {
         <hr />
         <Share title={title} url={url} pathname={props.location.pathname} />
         <PrevNext prev={prev && prev.node} next={next && next.node} />
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </div>
     </Layout>
   )

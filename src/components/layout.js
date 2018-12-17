@@ -11,7 +11,6 @@ import './layout.css'
 import Navigation from './navigation'
 import Sidebar from './sidebar'
 import Footer from './footer'
-import Metatags from './Metatags'
 
 library.add(faFolderOpen)
 
@@ -44,7 +43,7 @@ const OneColumnLayoutDiv = styled.div`
   padding-top: 0;
 `
 
-const Layout = ({ children, pageType }, props) => (
+const Layout = ({ children, pageType, title, showNav }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -57,13 +56,8 @@ const Layout = ({ children, pageType }, props) => (
     `}
     render={data => (
       <>
-        <Metatags
-          title={data.site.siteMetadata.title}
-          description={data.site.siteMetadata.description}
-        />
-
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Navigation />
+        {showNav && <Navigation title={title} />}
         {pageType === 'postList' && (
           <TwoColumnLayoutDiv>
             <Sidebar />

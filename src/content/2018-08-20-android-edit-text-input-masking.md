@@ -6,7 +6,7 @@ categories: ['android', 'learn-to-code']
 comments: true
 description: How to create Android Edit Text Input Masks
 # image: "https://res.cloudinary.com/dtthr02eh/image/upload/c_scale,w_300/v1534806011/ssnMask_uzqup6.gif"
-featured_image: "../images/ssnMask_uzqup6.gif"
+featured_image: "../images/ssnMask_uzqup6-c_scale,w_300.gif"
 featured_image_max_width: 300px
 ---
 

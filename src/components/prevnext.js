@@ -34,7 +34,7 @@ const PrevNext = ({ prev, next }) => {
           <FontAwesomeIcon
             icon={faChevronLeft}
             size="lg"
-            style={{ marginRight: '8px' }}
+            style={{ marginRight: '8px', opacity: '.9' }}
           />
           <a href={prev.fields.slug}> {prev.frontmatter.title}</a>
         </PrevLinkDiv>
@@ -45,7 +45,7 @@ const PrevNext = ({ prev, next }) => {
           <FontAwesomeIcon
             icon={faChevronRight}
             size="lg"
-            style={{ marginLeft: '8px' }}
+            style={{ marginLeft: '8px', opacity: '.9' }}
           />
         </NextLinkDiv>
       )}

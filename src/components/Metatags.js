@@ -52,8 +52,8 @@ function Metatags(props) {
                 },
                 { property: 'og:type', content: 'website' },
                 { name: 'robots', content: 'index, follow' },
-                { name: 'twitter:creator', content: '@saigowthamr' },
-                { property: 'og:site_name', content: 'yoursitename' }
+                { name: 'twitter:creator', content: '@brandonlehr' },
+                { property: 'og:site_name', content: 'brandonlehr.com' }
             ]}
         >
             <html lang="en" />
