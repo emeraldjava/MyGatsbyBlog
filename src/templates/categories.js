@@ -44,7 +44,7 @@ const Tags = ({ pageContext, data, location }) => {
       <Metatags
         title={`${titleCased} on Brandon Lehr . com`}
         description={description}
-        // thumbnail={url + thumbnail}
+        thumbnail={siteUrl + data.file.childImageSharp.fixed.src}
         url={siteUrl}
         pathname={`/categories/${tag}`}
       />
@@ -103,6 +103,13 @@ export const pageQuery = graphql`
         title
         description
         siteUrl
+      }
+    }
+    file(relativePath: { eq: "brandonlehr_header.png" }) {
+      childImageSharp {
+        fixed(width: 1200, height: 630) {
+          ...GatsbyImageSharpFixed_withWebp_tracedSVG
+        }
       }
     }
     allMarkdownRemark(

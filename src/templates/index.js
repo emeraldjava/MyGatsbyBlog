@@ -65,7 +65,7 @@ const IndexPage = props => {
       <Metatags
         title={title}
         description={description}
-        // thumbnail={url + thumbnail}
+        thumbnail={props.data.site.siteMetadata.siteUrl + props.data.file.childImageSharp.fixed.src}
         url={siteUrl}
         pathname={props.location.pathname}
       />
@@ -175,6 +175,13 @@ export const listQuery = graphql`
         siteUrl
         title
         description
+      }
+    }
+    file(relativePath: { eq: "brandonlehr_header.png" }) {
+      childImageSharp {
+        fixed(width: 1200, height: 630) {
+          ...GatsbyImageSharpFixed_withWebp_tracedSVG
+        }
       }
     }
   }
