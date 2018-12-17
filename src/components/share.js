@@ -30,7 +30,7 @@ export const ShareTwitter = styled.a`
 
 const Share = props => {
   const twitter = `https://twitter.com/intent/tweet?url=${props.url +
-    props.pathname}&text=${props.title} by @saigowthamr`
+    props.pathname}&text=${props.title} by @brandonlehr`
 
   const fb = `https://www.facebook.com/sharer/sharer.php?u=${props.url +
     props.pathname}`
