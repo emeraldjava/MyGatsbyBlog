@@ -107,7 +107,7 @@ export const pageQuery = graphql`
     }
     file(relativePath: { eq: "brandonlehr_header.png" }) {
       childImageSharp {
-        fixed(width: 1200, height: 630) {
+        fixed(width: 1040) {
           ...GatsbyImageSharpFixed_withWebp_tracedSVG
         }
       }
