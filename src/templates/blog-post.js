@@ -79,7 +79,7 @@ export const query = graphql`
               src
             }
             fluid(maxWidth: 786) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }

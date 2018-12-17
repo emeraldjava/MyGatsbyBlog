@@ -10,7 +10,6 @@ featured_image: "../images/roll_call_white_rounded_512.png"
 featured_image_max_width: 300px
 ---
 
-# Roll Call Attendance App
 
 ![Roll Call Logo](../images/roll_call_white_rounded_512.png)
 

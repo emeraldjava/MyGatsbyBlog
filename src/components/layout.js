@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFolderOpen } from '@fortawesome/free-regular-svg-icons'
@@ -12,6 +11,7 @@ import './layout.css'
 import Navigation from './navigation'
 import Sidebar from './sidebar'
 import Footer from './footer'
+import Metatags from './Metatags'
 
 library.add(faFolderOpen)
 
@@ -44,7 +44,7 @@ const OneColumnLayoutDiv = styled.div`
   padding-top: 0;
 `
 
-const Layout = ({ children, pageType }) => (
+const Layout = ({ children, pageType }, props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -57,15 +57,11 @@ const Layout = ({ children, pageType }) => (
     `}
     render={data => (
       <>
-        <Helmet
+        <Metatags
           title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Online Home of Brandon Lehr' },
-            { name: 'keywords', content: 'Tech, Web, React, Development' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
+          description={data.site.siteMetadata.description}
+        />
+
         <Header siteTitle={data.site.siteMetadata.title} />
         <Navigation />
         {pageType === 'postList' && (

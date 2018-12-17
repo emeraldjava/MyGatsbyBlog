@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import Layout from '../components/layout'
+import Metatags from '../components/Metatags'
 
 const StyledImage = styled.div`
   margin: auto;
@@ -42,10 +43,32 @@ const DateSpan = styled.span`
   font-size: 0.8rem;
 `
 
+const PageNavigation = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+`
+
 const IndexPage = props => {
   const postList = props.data.allMarkdownRemark
+  const { currentPage, numPages } = props.pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
+  const nextPage = (currentPage + 1).toString()
+  const { title, description, siteUrl } = props.data.site.siteMetadata
   return (
-    <Layout pageType="postList" >
+    <Layout pageType="postList" location={props.location}>
+      <Metatags
+        title={title}
+        description={description}
+        // thumbnail={url + thumbnail}
+        url={siteUrl}
+        pathname={props.location.pathname}
+      />
       {postList.edges.map(({ node }, i) => (
         <PostList key={i}>
           <DateSpan>{node.frontmatter.date}</DateSpan>
@@ -81,13 +104,44 @@ const IndexPage = props => {
           </Link>
         </PostList>
       ))}
+      <PageNavigation>
+        {!isFirst && (
+          <Link to={prevPage} rel="prev">
+            ← Previous Page
+          </Link>
+        )}
+        {Array.from({ length: numPages }, (_, i) => (
+          <li
+            key={`pagination-number${i + 1}`}
+            style={{
+              margin: 0,
+            }}
+          >
+            <Link
+              style={i + 1 === currentPage ? { fontWeight: 'bold' } : {}}
+              to={`/${i === 0 ? '' : i + 1}`}
+            >
+              {i + 1}
+            </Link>
+          </li>
+        ))}
+        {!isLast && (
+          <Link to={nextPage} rel="next">
+            Next Page →
+          </Link>
+        )}
+      </PageNavigation>
     </Layout>
   )
 }
 export default IndexPage
 export const listQuery = graphql`
-  query ListQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+  query ListQuery($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           fields {
@@ -114,6 +168,13 @@ export const listQuery = graphql`
             }
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
+        title
+        description
       }
     }
   }
