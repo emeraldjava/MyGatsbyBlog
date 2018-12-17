@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Brandon Lehr . com',
     description: 'Online Home of Brandon Lehr',
-    siteUrl: 'http://localhost:8000',
+    siteUrl: 'https://brandonlehr.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
