@@ -738,6 +738,86 @@ a:hover {
   }
 }
 
+
+@keyframes eye-move {
+  0% {
+    transform: translate(-3px, 1px);
+  }
+  20% {
+    transform: translate(3px, 1px);
+  }
+  40% {
+    transform: translate(-3px, 1px);
+  }
+  60% {
+    transform: translate(3px, 1px);
+  }
+  80% {
+    transform: translate(-3px, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes left-eye-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(1.25px, -1px);
+  }
+}
+
+@keyframes left-eye-blink {
+  0% {
+    r: 2.882;
+    opacity: 1;
+  }
+  50% {
+    r: .2;
+    overflow: hidden;
+    opacity: 0;
+  }
+  100% {
+    r: 2.882;
+    opacity: 1;
+  }
+}
+
+@keyframes left-eye-blink-pupil {
+  0% {
+    stroke: #0069c0;
+    stroke-width: 1.058;
+    r: .85;
+  }
+  50% {
+    stroke: #FFFFFF;
+    stroke-width: 0;
+    r: 0;
+  }
+  100% {
+    stroke: #0069c0;
+    stroke-width: 1.058;
+    r: .85;
+  }
+}
+
+.left-eye {
+  /* animation: left-eye-blink .5s linear 1 5s; */
+}
+
+.eyeBall {
+  animation: eye-move 5s linear;
+  
+}
+
+.eyeBall .left {
+  animation: left-eye-move 1.5s linear 5s forwards;
+  /* animation: left-eye-blink-pupil .5s linear 2 5s; */
+}
+
+
 .hours-container {
   animation: rotate 1080s infinite linear;
 }

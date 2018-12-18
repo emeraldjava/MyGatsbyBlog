@@ -22,7 +22,7 @@ const HeaderContent = styled.div`
   h1 {
     text-align: center;
     margin: 0;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     margin-bottom: 1.5rem;
   }
 `
@@ -37,7 +37,7 @@ const HeaderSceneDiv = styled.div`
 const Header = ({ siteTitle }) => (
   <StyledHeader>
     <HeaderContent>
-    <h1>
+      <h1>
         <Link
           to="/"
           style={{
@@ -112,6 +112,7 @@ const Header = ({ siteTitle }) => (
               strokeWidth="1.587"
             />
             <circle
+              className="left-eye"
               cx="73.375"
               cy="27.98"
               r="2.882"
@@ -120,28 +121,30 @@ const Header = ({ siteTitle }) => (
               strokeLinejoin="round"
               strokeWidth="1.587"
             />
-            <circle
-              cx="59.248"
-              cy="28.688"
-              r=".85"
-              stroke="#0069c0"
-              strokeLinejoin="round"
-              strokeWidth="1.058"
-            />
-            <circle
-              cx="73.327"
-              cy="28.594"
-              r=".85"
-              stroke="#0069c0"
-              strokeLinejoin="round"
-              strokeWidth="1.058"
-            />
+            <g className="eyeBall">
+              <circle
+                cx="59.248"
+                cy="28.688"
+                r=".85"
+                stroke="#0069c0"
+                strokeLinejoin="round"
+                strokeWidth="1.058"
+              />
+              <circle
+                className="left"
+                cx="73.327"
+                cy="28.594"
+                r=".85"
+                stroke="#0069c0"
+                strokeLinejoin="round"
+                strokeWidth="1.058"
+              />
+            </g>
           </g>
         </svg>
 
         <Clock />
       </HeaderSceneDiv>
-      
     </HeaderContent>
   </StyledHeader>
 )
