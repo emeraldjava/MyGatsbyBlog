@@ -58,13 +58,14 @@ const Layout = ({ children, pageType, title, showNav }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
+        {showNav && <Navigation title={title} />}
         <GoogleAd
           client="ca-pub-9453781066915703"
           slot="3728415001"
           format="auto"
           wrapperDivStyle={{ maxWidth: '1200px', minHeight: '50px', margin: 'auto', marginBottom: '15px' }}
         />
-        {showNav && <Navigation title={title} />}
+        
         {pageType === 'postList' && (
           <TwoColumnLayoutDiv>
             <Sidebar />
