@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
 export default class GoogleAd extends Component {
-  // componentDidMount = () => {
-  //   if (typeof window !== 'undefined') {
-  //     ;(window.adsbygoogle = window.adsbygoogle || []).push({})
-  //   }
-  // }
+  componentDidMount = () => {
+    if (typeof window !== 'undefined') {
+      ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+    }
+  }
 
   render() {
     return (

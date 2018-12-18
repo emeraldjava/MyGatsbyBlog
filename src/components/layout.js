@@ -62,7 +62,7 @@ const Layout = ({ children, pageType, title, showNav }) => (
           client="ca-pub-9453781066915703"
           slot="3728415001"
           format="auto"
-          wrapperDivStyle={{ width: '100%', minHeight: '50px', marginBottom: '15px' }}
+          wrapperDivStyle={{ maxWidth: '1200px', minHeight: '50px', margin: 'auto', marginBottom: '15px' }}
         />
         {showNav && <Navigation title={title} />}
         {pageType === 'postList' && (
