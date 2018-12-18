@@ -9,7 +9,7 @@ const StyledHeader = styled.div`
   background: #2196f3;
   width: 100%;
   height: 325px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `
 

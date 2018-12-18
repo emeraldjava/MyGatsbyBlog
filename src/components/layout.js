@@ -11,6 +11,7 @@ import './layout.css'
 import Navigation from './navigation'
 import Sidebar from './sidebar'
 import Footer from './footer'
+import GoogleAd from './google_ad'
 
 library.add(faFolderOpen)
 
@@ -57,6 +58,12 @@ const Layout = ({ children, pageType, title, showNav }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
+        <GoogleAd
+          client="ca-pub-9453781066915703"
+          slot="3728415001"
+          format="auto"
+          wrapperDivStyle={{ width: '100%', minHeight: '50px', marginBottom: '15px' }}
+        />
         {showNav && <Navigation title={title} />}
         {pageType === 'postList' && (
           <TwoColumnLayoutDiv>

@@ -5,6 +5,18 @@ module.exports = {
     siteUrl: 'https://brandonlehr.com',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-62760710-1',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-9453781066915703`,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
@@ -17,9 +29,9 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Lato']
-        }
-      }
+          families: ['Lato'],
+        },
+      },
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -66,17 +78,17 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-embed-gist",
+            resolve: 'gatsby-remark-embed-gist',
             options: {
               // Optional:
-    
+
               // the github handler whose gists are to be accessed
               username: 'blehr',
-    
+
               // a flag indicating whether the github default gist css should be included or not
               // default: true
-              includeDefaultCss: true
-            }
+              includeDefaultCss: true,
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -90,19 +102,6 @@ module.exports = {
           },
           `gatsby-remark-smartypants`,
           'gatsby-remark-static-images',
-          {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-              trackingId: "UA-62760710-1",
-            },
-          },
-          {
-            resolve: `gatsby-plugin-google-adsense`,
-            options: {
-              publisherId: `ca-pub-9453781066915703`,
-              exclude: []
-            },
-          },
         ],
       },
     },
