@@ -6,6 +6,8 @@
 
 // You can delete this file if you're not using it
 // require("prismjs/themes/prism.css")
+require('typeface-lato')
 require('prismjs/themes/prism-okaidia.css')
+require('@fortawesome/fontawesome-free/css/all.css')
 
 

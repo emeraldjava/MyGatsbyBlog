@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFolderOpen } from '@fortawesome/free-regular-svg-icons'
-import '@fortawesome/fontawesome-free/css/all.css'
 import styled from 'styled-components'
 
 import Header from './header'

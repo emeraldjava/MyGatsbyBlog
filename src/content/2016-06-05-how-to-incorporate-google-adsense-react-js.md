@@ -47,6 +47,67 @@ The next step is to create a GoogleAd component. The biggest change is placing t
 
 A few other changes are required for react.js, such as changing class to className, converting the inline style tag from a string to an object, and I opted to wrap the adSense code in a div, which I could pass a style object to as well. The gist below contains some code to demonstrate.
 
-`gist:6fd24b76554e445d95029ca9430603c2`
+```javascript
+import React, { Component, PropTypes } from 'react';
+
+export default class GoogleAd extends Component {
+  static propTypes = {
+    client: PropTypes.string,
+    slot: PropTypes.string,
+    format: PropTypes.string,
+    wrapperDivStyle: PropTypes.object
+  }
+  
+  // This code is ran when the component mounts
+  componentDidMount() {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }
+  
+  // an outer div for styling purposes
+  // changed class to ClassName
+  // changed style from string to an object
+
+  render() {
+    return (
+      <div style={this.props.wrapperDivStyle} > 
+        <ins className="adsbygoogle"  
+          style={{'display': 'block'}}
+          data-ad-client={this.props.client}
+          data-ad-slot={this.props.slot}
+          data-ad-format={this.props.format}>
+        </ins>
+      </div>
+    );
+  }
+}
+
+************************************************************
+
+// To use the Component
+import React, { Component, PropTypes } from 'react';
+import GoogleAd from './google_ad';
+
+// create a style object that is applied
+// to the div wrapping the adSense code
+// no styling required - just leave style object empty
+const style = {
+  marginTop: '15px',
+  marginBottom: '20px'
+};
+
+const SomeComponent = props => {
+  return (
+    <GoogleAd 
+      client="ca-pub-xxxxxxxxxx" 
+      slot="xxxxxxxxxx" 
+      format="auto" 
+      wrapperDivStyle={style}
+    />
+  );
+};
+
+export default SomeComponent;
+```
+
 
 This solution has worked for me, but if you experience any problems, just let me know and I&#8217;ll see if I can help.

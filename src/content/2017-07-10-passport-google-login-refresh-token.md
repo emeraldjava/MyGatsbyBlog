@@ -33,15 +33,116 @@ params = {
 
 From this you can calculate the expiry time and save it to the database. 
 
-`gist:b79115066d975d8e3f7afcced8221d60`
+```javascript
+// passport-google-strategy.js
+
+passport.use(new GoogleStrategy({
+    clientID: configAuth.googleAuth.clientID,
+    clientSecret: configAuth.googleAuth.clientSecret,
+    callbackURL: configAuth.googleAuth.callbackURL,
+    passReqToCallback: true 
+  },
+  function(req, accessToken, refreshToken, params, profile, done) {
+    /*
+      params = { 
+        access_token: 'Long_string',
+        token_type: 'Bearer',
+        expires_in: 3599, // seconds
+        id_token: 'Longer_string'
+      }
+    */
+  
+    // find expiry_date so it can be save in the database, along with access and refresh token
+    const expiry_date = moment().add(params.expires_in, "s").format("X");
+      ...
+    }
+))
+```
 
 Here is the code for the route middleware. Remember to always call `next()` when it is time to go on to the next step.
 
-`gist:3514d1066338550115f1205acd570134`
+```javascript
+// token-validator.js
+
+const User = require("../models/users.js");
+const google = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
+const auth = require("./auth");
+const moment = require("moment");
+
+// create auth client
+const oauth2Client = new OAuth2(
+  auth.googleAuth.clientID,
+  auth.googleAuth.clientSecret,
+  auth.googleAuth.callbackURL
+);
+
+exports.checkToken = (req, res, next) => {
+  // check for user
+  if (!req.user) {
+    return next();
+  }
+  // subtract current time from stored expiry_date and see if less than 5 minutes (300s) remain
+  if (moment().subtract(req.user.google.expiry_date, "s").format("X") > -300) {
+    
+    // set the current users access and refresh token
+    oauth2Client.setCredentials({
+      access_token: req.user.google.token,
+      refresh_token: req.user.google.refreshToken
+    });
+
+     // request a new token
+    oauth2Client.refreshAccessToken(function(err, tokens) {
+      if (err) return next(err);
+      
+      //save the new token and expiry_date
+      User.findOneAndUpdate(
+        { "google.id": req.user.google.id },
+        {
+          "google.token": tokens.access_token,
+          "google.expiry_date": tokens.expiry_date
+        },
+        {
+          new: true,
+          runValidators: true
+        },
+        function(err, doc) {
+          if (err) return next(err);
+          next();
+        }
+      );
+    });
+  }
+  next();
+};
+```
+
 
 The last step is to tell the router to use the middleware that we just created.
 
-`gist:8db8adc845ffb61ea9e948f2325f1e29`
+```javascript
+// api-routes.js
+
+const { checkToken } = require("../services/token-validator");
+
+// create the router
+const apiRouter = express.Router();
+
+// tell the router to use checkToken function
+apiRouter.use(checkToken);
+
+// create routes
+const routes = () => {
+  apiRouter.route("/user").get(ApiController.getUser);
+
+  ...
+
+  return apiRouter;
+};
+
+module.exports = routes;
+```
+
 
 Now the token will be checked for expiration on every route on which the middleware is used.
 

@@ -121,7 +121,7 @@ const Header = ({ siteTitle }) => (
               strokeLinejoin="round"
               strokeWidth="1.587"
             />
-            <g className="eyeBall">
+            <g className="pupil">
               <circle
                 cx="59.248"
                 cy="28.688"
@@ -131,6 +131,7 @@ const Header = ({ siteTitle }) => (
                 strokeWidth="1.058"
               />
               <circle
+                id="left-pupil"
                 className="left"
                 cx="73.327"
                 cy="28.594"

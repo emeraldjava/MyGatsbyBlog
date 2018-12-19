@@ -6,6 +6,7 @@ const NavUl = styled.ul`
   display: flex;
   list-style: none;
   justify-content: center;
+  align-items: center;
   font-size: .8rem;
   li {
     margin-right: 15px;
@@ -21,7 +22,7 @@ export default function Navigation({ title }) {
   return (
     <div>
       <NavUl>
-        <li><Link to="/" >Home</Link></li>
+        <li style={{ fontSize: '1rem' }} ><Link to="/" >Home</Link></li>
         {title && <TitleLi>/ {title}</TitleLi>}
       </NavUl>
     </div>

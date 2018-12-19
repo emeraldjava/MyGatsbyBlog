@@ -19,14 +19,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Lato'],
-        },
-      },
-    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -69,19 +61,6 @@ module.exports = {
               // base for generating different widths of each image.
               maxWidth: 500,
               withWebp: true,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-embed-gist',
-            options: {
-              // Optional:
-
-              // the github handler whose gists are to be accessed
-              username: 'blehr',
-
-              // a flag indicating whether the github default gist css should be included or not
-              // default: true
-              includeDefaultCss: true,
             },
           },
           {

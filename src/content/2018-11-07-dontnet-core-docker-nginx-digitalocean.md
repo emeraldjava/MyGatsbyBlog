@@ -27,7 +27,31 @@ Here is the folder structure for my app. Notice the dockerfile, and the docker-c
 
 The dockerfile contains the build instructions for the dotnet app. It begins by using the sdk image for building the app and then uses a lightweight runtime image, copying the output of the previous build. Next, we expose port 5000 and specify the entry point of the application.
 
-<script src="https://gist.github.com/blehr/5785730971a728b882deea5841c3f749.js"></script>
+```javascript
+// dockerfile
+
+FROM microsoft/dotnet:2.1-sdk AS build-env
+WORKDIR /app
+
+# Copy csproj and restore
+COPY *.csproj ./
+RUN dotnet restore
+
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
+WORKDIR /.
+COPY --from=build-env /app/out .
+
+ENV ASPNETCORE_URLS http://+:5000
+EXPOSE 5000
+
+# Change name of dll for your application 
+ENTRYPOINT ["dotnet", "AlpacaTracker.dll"]
+```
 
 
 ## docker-compose
@@ -49,8 +73,28 @@ From their github readme...
 
 The https-portal service specifies the image, ports to be exposed, links which allow the connection to the app service, and environment. The environment is where the reverse proxy is configured. The DOMAINS for this app directs it to forward everything to my domain, alpacatracker.com, on to the app service on the port that was specified in the dockerfile. Finally, the STAGE is specified so that the Let's Encrypt certificates will be downloaded and configured.
 
+```yaml
+#docker-compose.yml
 
-<script src="https://gist.github.com/blehr/add67a4e70f3d1ea19886c9d2b1f3e62.js"></script>
+version: '2'
+ 
+services:
+  app:
+    build:
+      context:  ./
+      dockerfile: Dockerfile
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - app
+    restart: always
+    environment:
+      DOMAINS: 'alpacatracker.com -> http://app:5000'
+      STAGE: 'production'
+```
 
 
 Before we head over to Digital Ocean, push all of these changes up to your github repo.
