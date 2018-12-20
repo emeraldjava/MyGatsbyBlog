@@ -53,6 +53,12 @@ Optionally, select contacts to send a message to when the reminder is triggered.
 
 ![Remind me when I'm there sms view](../images/remindme-sms-window-cropped.jpg)
 
+## Update 12/20/2018 - Changes to Sending an SMS
+
+Google recently changed access to sending direct text messages to only be allowed through default messaging apps. This feature is still available, but the process has changed. An SMS will no longer send without interaction. When a notification is received that includes the SMS option, a button in the notification will appear (Send SMS) that will initiate the process.
+
+![Remind me when I'm there Reminder Notification](../images/remindme_sms_notification.jpg)
+
 ## See All Reminders
 
 The main page displays all of your reminders.
