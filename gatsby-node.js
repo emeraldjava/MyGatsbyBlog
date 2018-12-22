@@ -4,7 +4,6 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
   const categoryTemplate = path.resolve('src/templates/categories.js')
   return new Promise((resolve, reject) => {
     resolve(
@@ -102,7 +101,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     )
 
     // create a new slug concatenating everything
-
     const categorySlug = categories.join('/')
     const dateSlug = date.replace(/-/g, '/')
 
