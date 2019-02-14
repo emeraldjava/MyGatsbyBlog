@@ -62,6 +62,6 @@ Check out [Roll Call](https://play.google.com/store/apps/details?id=com.brandonl
 
 ## On the Web
 
-Now you can use [Roll Call on the web](https://blehr.github.io/rollcall). With the ability to download attendance records!
+Now you can use [Roll Call on the web](https://rollcall.netlify.com). With the ability to download attendance records!
 
 Give it a try and let me know how it works for you. I'm always looking for feedback, to improve the app.

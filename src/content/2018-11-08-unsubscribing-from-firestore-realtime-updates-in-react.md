@@ -15,7 +15,7 @@ featured_image_max_width: 300px
 ![firestore logo](../images/firestore_logo.png)
 
 
-I recently built [Roll Call](https://play.google.com/store/apps/details?id=com.brandonlehr.rollcall) my attendance taking Android app utilizing Firestore as my database. When I went to build the companion [web app](https://brandonlehr.com/rollcall) with React and Redux, I was faced with the issue of how to unsubscribe from the realtime updates when I was finished with them. Every good developer guards against memory leaks 😃 !
+I recently built [Roll Call](https://play.google.com/store/apps/details?id=com.brandonlehr.rollcall) my attendance taking Android app utilizing Firestore as my database. When I went to build the companion [web app](https://rollcall.netlify.com) with React and Redux, I was faced with the issue of how to unsubscribe from the realtime updates when I was finished with them. Every good developer guards against memory leaks 😃 !
 
 ## The Problem
 
