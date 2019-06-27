@@ -644,6 +644,19 @@ a:hover {
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
 }
+.two-item-flex-no-border {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+.div-300-margin-bottom-10 {
+  width: 300px;
+  margin-bottom: 10px;
+}
 
 .video-container {
   position: relative;
@@ -651,6 +664,7 @@ a:hover {
   padding-top: 35px;
   height: 0;
   overflow: hidden;
+  margin-bottom: 25px;
 }
 
 .video-container iframe {
