@@ -5,7 +5,7 @@ date: '2019-06-27'
 categories: ['Android', 'iOS', 'flutter']
 
 comments: true
-description: Drink Counter, an Android and iOS app for tracking and monitoring your drinks, while enjoying great drinking quotes.
+description: Drink Counter, an Android and iOS app for tracking and monitoring your drinks, estimating your BAC, all while enjoying great drinking quotes.
 image: '../images/play_banner.png'
 featured_image: '../images/play_banner.png'
 featured_image_max_width: 300px
@@ -49,6 +49,17 @@ Grab a drink and add it to the count. Watch as the containers fill and get large
     </div>
   <div class="div-300-margin-bottom-10">
     <img src="../images/four_beers.jpg" alt="Drink Counter screenshot">
+  </div>
+</div>
+
+After setting up your details in settings, estimating your BAC is just a click away.
+
+<div class="two-item-flex-no-border" >
+  <div class="div-300-margin-bottom-10">
+    <img src="../images/bac_output_android.jpg" alt="Drink Counter screenshot" >
+    </div>
+  <div class="div-300-margin-bottom-10">
+    <img src="../images/over_bac.jpg" alt="Drink Counter screenshot">
   </div>
 </div>
 
