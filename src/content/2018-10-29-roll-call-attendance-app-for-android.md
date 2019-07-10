@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Roll Call Attendance App for Android
+title: Roll Call Attendance App for Android and iOS
 date: '2018-10-29'
 categories: ['android', 'i-built-this']
 comments: true
-description: Attendance Tracking Made Easy
+description: Attendance Tracking Made Easy on Android and iOS.
 image: "../images/roll_call_white_rounded_512.png"
 featured_image: "../images/roll_call_white_rounded_512.png"
 featured_image_max_width: 300px
@@ -15,7 +15,22 @@ featured_image_max_width: 300px
 
 ## Looking for a convenient way to track attendance?
 
-Check out [Roll Call](https://play.google.com/store/apps/details?id=com.brandonlehr.rollcall) for Android
+
+<div class="two-item-flex-no-border">
+  <div style="width:200px; margin:auto;">
+  <a href="https://play.google.com/store/apps/details?id=com.brandonlehr.rollcall">
+    <img
+      alt="Get it on Google Play"
+      src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+    />
+  </a>
+  </div>
+  <div style="width:180px; margin:auto;">
+    <a href="https://apps.apple.com/us/app/roll-call-attendance-app/id1472047580">
+      <img src="../images/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" style="width:100%;" >
+    </a>
+  </div>
+</div>
 
 <div class="two-item-flex" >
   <div style="max-width: 300px;">
@@ -57,7 +72,21 @@ Check out [Roll Call](https://play.google.com/store/apps/details?id=com.brandonl
   </div>
 </div>
 
-<div style="width: 200px"><a href="https://play.google.com/store/apps/details?id=com.brandonlehr.rollcall&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"></a></div>
+<div class="two-item-flex-no-border">
+  <div style="width:200px; margin:auto;">
+  <a href="https://play.google.com/store/apps/details?id=com.brandonlehr.rollcall">
+    <img
+      alt="Get it on Google Play"
+      src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+    />
+  </a>
+  </div>
+  <div style="width:180px; margin:auto;">
+    <a href="https://apps.apple.com/us/app/roll-call-attendance-app/id1472047580">
+      <img src="../images/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" style="width:100%;" >
+    </a>
+  </div>
+</div>
 
 
 ## On the Web
