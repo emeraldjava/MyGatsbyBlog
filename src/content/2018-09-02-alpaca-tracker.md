@@ -4,13 +4,29 @@ title: Announcing The Alpaca Tracker
 date: '2018-09-02'
 categories: ['alpaca', 'i-built-this']
 comments: true
-description: Convenient and FREE alpaca record keeping software
+description: Convenient and FREE alpaca record keeping software on the web, Android, and iOS.
 image: "../images/alpaca_tracker_social_image.png"
 featured_image: "../images/alpaca_tracker_social_image.png"
 featured_image_max_width: 300px
 ---
 
 ![alpacatracker.com logo](../images/alpaca_tracker_social_image.png)
+
+<div class="two-item-flex-no-border">
+  <div style="width:200px; margin:auto;">
+  <a href="https://play.google.com/store/apps/details?id=com.brandonlehr.alpacatracker&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+    <img
+      alt="Get it on Google Play"
+      src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+    />
+  </a>
+  </div>
+  <div style="width:180px; margin:auto;">
+    <a href="https://apps.apple.com/us/app/alpaca-tracker/id1462547727">
+      <img src="../images/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" style="width:100%;" >
+    </a>
+  </div>
+</div>
 
 
 ### Who doesn't love alpacas?
@@ -25,11 +41,25 @@ So I would like to announce the [Alpaca Tracker](https://alpacatracker.com). Alp
 
 There are other options out there, but they all come at a price, and often contain a confusing interface full of unneeded options, and slow response times. I designed Alpaca Tracker to be simple and effective, giving easy access to all of the information that you actually need on desktop and mobile to keep your herd successfully and efficiently managed.
 
-### Alpaca Tracker on Android
+### Alpaca Tracker on Android and iOS
 
 Now you view and update alpaca information and events from your phone.
 
-<div style="width: 200px; margin-bottom: 15px;" ><a href="https://play.google.com/store/apps/details?id=com.brandonlehr.alpacatracker&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/></a></div>
+<div class="two-item-flex-no-border">
+  <div style="width:200px; margin:auto;">
+  <a href="https://play.google.com/store/apps/details?id=com.brandonlehr.alpacatracker&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+    <img
+      alt="Get it on Google Play"
+      src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+    />
+  </a>
+  </div>
+  <div style="width:180px; margin:auto;">
+    <a href="https://apps.apple.com/us/app/alpaca-tracker/id1462547727">
+      <img src="../images/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" style="width:100%;" >
+    </a>
+  </div>
+</div>
   
 <div class="two-item-flex">
 <div style="min-width: 300px;">
