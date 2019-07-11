@@ -62,6 +62,12 @@ export default function Sidebar(props) {
 
               <ul>
                 <li>
+                  <a href="https://apps.apple.com/us/developer/brandon-lehr/id1461765394" >View all of my iOS Apps</a>
+                </li>
+                <li>
+                  <a href="https://play.google.com/store/apps/developer?id=Brandon+Lehr" >View all of my Android Apps</a>
+                </li>
+                <li>
                   <Link to="/alpaca/i-built-this/2018/09/02/alpaca-tracker">
                     The Alpaca Tracker
                   </Link>
@@ -71,7 +77,7 @@ export default function Sidebar(props) {
                   <Link to="/android/i-built-this/2018/11/25/remind-me-when-i-get-there">
                     Remind Me When I'm There
                   </Link>
-                  , Android location aware reminders!
+                  , Android and iOS location aware reminders!
                 </li>
                 <li>
                   <Link to="/android/i-built-this/2018/10/29/roll-call-attendance-app-for-android">
