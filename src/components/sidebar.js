@@ -57,7 +57,7 @@ export default function Sidebar(props) {
 
               <p>
                 I've spent most of my time learning the usual HTML and CSS,
-                JavaScript, Node, React, Android, and iOS.{' '}
+                JavaScript, Node, React, Flutter, Android, and iOS.{' '}
               </p>
 
               <ul>
@@ -74,7 +74,7 @@ export default function Sidebar(props) {
                   , free alpaca record keeping software for mobile and web!
                 </li>
                 <li>
-                  <Link to="/android/i-built-this/2018/11/25/remind-me-when-i-get-there">
+                  <Link to="/Android/iOS/Location%20Reminders/2019/05/03/remind-me-when-im-there">
                     Remind Me When I'm There
                   </Link>
                   , Android and iOS location aware reminders!
@@ -109,14 +109,14 @@ export default function Sidebar(props) {
                   , a highly customizable theme perfect for personal blogs and
                   bios.
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/i-built-this/2015/05/15/wchscouts-com-cub-boy-scout-website-for-washington-ch-oh">
                     Scout Website
                   </Link>
                   , this is the website for Troop and Pack 112. It features a
                   JavaScript powered quiz to help the boys learn the Scout Oath
                   and Law.
-                </li>
+                </li> */}
               </ul>
             </SidebarBlock>
           </StyledSidebar>
