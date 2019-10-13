@@ -65,7 +65,7 @@ const IndexPage = props => {
       <Metatags
         title={title}
         description={description}
-        thumbnail={props.data.site.siteMetadata.siteUrl + props.data.file.childImageSharp.fixed.src}
+        thumbnail="thumb"
         url={siteUrl}
         pathname={props.location.pathname}
       />
@@ -147,7 +147,7 @@ export const listQuery = graphql`
           fields {
             slug
           }
-          excerpt(pruneLength: 250)
+          excerpt
           frontmatter {
             date(formatString: "MMMM Do YYYY")
             title
@@ -155,16 +155,6 @@ export const listQuery = graphql`
             featured_image_max_width
             featured_image {
               publicURL
-            }
-            featured_image {
-              childImageSharp {
-                resize(width: 1500, height: 1500) {
-                  src
-                }
-                fluid(maxWidth: 768) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
             }
           }
         }
@@ -175,13 +165,6 @@ export const listQuery = graphql`
         siteUrl
         title
         description
-      }
-    }
-    file(relativePath: { eq: "brandonlehr_header.png" }) {
-      childImageSharp {
-        fixed(width: 1080) {
-          ...GatsbyImageSharpFixed_withWebp_tracedSVG
-        }
       }
     }
   }

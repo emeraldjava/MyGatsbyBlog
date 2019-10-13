@@ -72,7 +72,6 @@ export default BlogPost
 export const query = graphql`
   query PostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
       frontmatter {
         title
         date(formatString: "MMMM Do YYYY")
@@ -80,16 +79,6 @@ export const query = graphql`
         categories
         featured_image {
           publicURL
-        }
-        featured_image {
-          childImageSharp {
-            resize(width: 1500, height: 1500) {
-              src
-            }
-            fluid(maxWidth: 786) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
         }
       }
     }

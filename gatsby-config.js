@@ -19,20 +19,20 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Brandon Lehr',
-        short_name: 'Brandon Lehr',
-        start_url: '/',
-        background_color: '#2196f3',
-        theme_color: '#2196f3',
-        display: 'minimal-ui',
-        icon: 'src/images/favicons/android-chrome-512x512.png', // This path is relative to the root of the site.
-      },
-    },
+    // 'gatsby-transformer-sharp',
+    // 'gatsby-plugin-sharp',
+    // {
+    //   resolve: 'gatsby-plugin-manifest',
+    //   options: {
+    //     name: 'Brandon Lehr',
+    //     short_name: 'Brandon Lehr',
+    //     start_url: '/',
+    //     background_color: '#2196f3',
+    //     theme_color: '#2196f3',
+    //     display: 'minimal-ui',
+    //     icon: 'src/images/favicons/android-chrome-512x512.png', // This path is relative to the root of the site.
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-typography',
       options: {

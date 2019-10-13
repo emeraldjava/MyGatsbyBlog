@@ -7,7 +7,6 @@ import kebabCase from 'lodash/kebabCase'
 // Components
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
-import Metatags from '../components/Metatags'
 
 const TagsPage = ({
   data: {
@@ -15,22 +14,10 @@ const TagsPage = ({
     site: {
       siteMetadata: { title, description, siteUrl },
     },
-    file: {
-      childImageSharp: {
-        fixed: { src },
-      },
-    },
   },
 }) => {
   return (
     <div>
-      <Metatags
-        title={title}
-        description={description}
-        thumbnail={siteUrl + src}
-        url={siteUrl}
-        pathname={'/categories'}
-      />
       <Layout pageType="postList" title="Categories" showNav>
         <h2>Categories</h2>
         <ul>
@@ -81,13 +68,6 @@ export const pageQuery = graphql`
       group(field: frontmatter___categories) {
         fieldValue
         totalCount
-      }
-    }
-    file(relativePath: { eq: "brandonlehr_header.png" }) {
-      childImageSharp {
-        fixed(width: 1040) {
-          ...GatsbyImageSharpFixed_withWebp_tracedSVG
-        }
       }
     }
   }

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import FollowMe from './follow-me'
 
 const AuthorBioDiv = styled.div`
@@ -40,12 +39,8 @@ export default function AuthorBio() {
     <StaticQuery
       query={graphql`
         query {
-          file(relativePath: { eq: "profilefunky.jpg" }) {
-            childImageSharp {
-              fixed(width: 150, height: 150) {
-                ...GatsbyImageSharpFixed_withWebp_tracedSVG
-              }
-            }
+          file {
+            name
           }
         }
       `}
@@ -53,10 +48,10 @@ export default function AuthorBio() {
         return (
           <AuthorBioDiv>
             <div>
-              <Img
+              {/* <Img
                 fixed={data.file.childImageSharp.fixed}
                 imgStyle={{ borderRadius: '20px' }}
-              />
+              /> */}
             </div>
             <BioWordsDiv>
               <FollowMe />

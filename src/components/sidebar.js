@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
-
 import FollowMe from './follow-me';
 
 const StyledSidebar = styled.div`
@@ -26,11 +24,7 @@ export default function Sidebar(props) {
       query={graphql`
         query {
           file(relativePath: { eq: "profilefunky.jpg" }) {
-            childImageSharp {
-              fixed(width: 150, height: 150) {
-                ...GatsbyImageSharpFixed_withWebp_tracedSVG
-              }
-            }
+            name
           }
         }
       `}
@@ -38,10 +32,10 @@ export default function Sidebar(props) {
         return (
           <StyledSidebar>
             <SidebarBlock>
-              <Img
+              {/* <Img
                 fixed={data.file.childImageSharp.fixed}
                 imgStyle={{ borderRadius: '20px', marginRight: 'auto' }}
-              />
+              /> */}
             </SidebarBlock>
 
             <SidebarBlock>
