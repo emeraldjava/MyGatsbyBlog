@@ -44,7 +44,7 @@ const Tags = ({ pageContext, data, location }) => {
       <Metatags
         title={`${titleCased} on Brandon Lehr . com`}
         description={description}
-        thumbnail={siteUrl + data.file.childImageSharp.fixed.src}
+        thumbnail={siteUrl + data.file}
         url={siteUrl}
         pathname={`/categories/${tag}`}
       />

@@ -92,9 +92,16 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 -   **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-## 💫 Deploy
+## Emerald
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+- https://brandonlehr.com/gatsby/jekyll/2018/12/22/from-jekyll-to-gatsby
 
+### maven plugin
 
-https://brandonlehr.com/gatsby/jekyll/2018/12/22/from-jekyll-to-gatsby
+- https://dzone.com/articles/integrating-nodejs-build-tools-with-maven
+
+## Actions
+
+- https://blog.infomofo.com/deploying-a-gatsby-blog-with-github-actions
+- https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages
+- https://nehalist.io/building-and-deploying-gatsby-sites-with-github-actions/
